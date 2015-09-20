@@ -11,7 +11,7 @@ import Foundation
 class Prefrences {
     
     let countryCodeKeyConstant = "countryCode"
-    
+    let mobileNumberKeyConstant = "mobileNumber"
     
     static let getInstance = Prefrences()
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -24,6 +24,12 @@ class Prefrences {
      return defaults.stringForKey(countryCodeKeyConstant)!
     }
     
+    func setMobileNumber(mobileNumber : String){
+        defaults.setObject(mobileNumber, forKey: mobileNumberKeyConstant)
+    }
     
+    func getMobileNumber() -> String {
+        return defaults.stringForKey(mobileNumberKeyConstant)!
+    }
     
 }
