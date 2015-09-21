@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RegisterView: UIViewController {
 
     @IBOutlet weak var doneButton: UIButton!
     
@@ -18,10 +18,6 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-//        Prefrences.getInstance.setCountrycode("1")
-//        println(Prefrences.getInstance.getCountryCode())
-        // Do any additional setup after loading the view, typically from a nib.
         
         doneButton.hidden=true
         

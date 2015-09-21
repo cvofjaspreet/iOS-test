@@ -10,15 +10,21 @@
             <rect key="frame" x="0.0" y="0.0" width="559" height="489"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="d_splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="vmZ-VM-8zw">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="d_splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="vmZ-VM-8zw">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                    <variation key="widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="0.0" y="0.0" width="559" height="480"/>
+                    </variation>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="vmZ-VM-8zw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="1TF-QX-gOE"/>
-                <constraint firstAttribute="trailing" secondItem="vmZ-VM-8zw" secondAttribute="trailing" constant="79" id="5qH-ql-zn5"/>
                 <constraint firstItem="vmZ-VM-8zw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9ps-dh-Dus"/>
+                <constraint firstItem="vmZ-VM-8zw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Iru-Dn-CDF"/>
+                <constraint firstAttribute="bottom" secondItem="vmZ-VM-8zw" secondAttribute="bottom" constant="9" id="RQB-qR-sfG"/>
+                <constraint firstAttribute="trailing" secondItem="vmZ-VM-8zw" secondAttribute="trailing" id="SBk-2S-gJF"/>
+                <constraint firstItem="vmZ-VM-8zw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cyd-Pf-vPk"/>
                 <constraint firstAttribute="bottom" secondItem="vmZ-VM-8zw" secondAttribute="bottom" id="k0O-OO-tdQ"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -26,16 +32,22 @@
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="1TF-QX-gOE"/>
-                    <exclude reference="5qH-ql-zn5"/>
                     <exclude reference="9ps-dh-Dus"/>
+                    <exclude reference="Iru-Dn-CDF"/>
+                    <exclude reference="RQB-qR-sfG"/>
+                    <exclude reference="SBk-2S-gJF"/>
+                    <exclude reference="cyd-Pf-vPk"/>
                     <exclude reference="k0O-OO-tdQ"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="constraints">
                     <include reference="1TF-QX-gOE"/>
-                    <include reference="5qH-ql-zn5"/>
                     <include reference="9ps-dh-Dus"/>
+                    <include reference="Iru-Dn-CDF"/>
+                    <include reference="RQB-qR-sfG"/>
+                    <include reference="SBk-2S-gJF"/>
+                    <include reference="cyd-Pf-vPk"/>
                     <include reference="k0O-OO-tdQ"/>
                 </mask>
             </variation>
