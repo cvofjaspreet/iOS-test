@@ -148,7 +148,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onDoneClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LuC-7S-Jcz"/>
-                                    <segue destination="ux5-mS-yOK" kind="push" id="sok-Zw-7Rt"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -214,24 +213,54 @@
             </objects>
             <point key="canvasLocation" x="1893" y="588"/>
         </scene>
-        <!--View Controller-->
+        <!--Set Profile-->
         <scene sceneID="f5E-2g-qHd">
             <objects>
-                <viewController id="ux5-mS-yOK" sceneMemberID="viewController">
+                <viewController restorationIdentifier="setProfile" storyboardIdentifier="setProfile" id="ux5-mS-yOK" customClass="SetProfile" customModule="deliver" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T7R-qK-INv"/>
                         <viewControllerLayoutGuide type="bottom" id="mUI-Jh-5RN"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xDq-gJ-wfb">
+                    <view key="view" contentMode="scaleToFill" horizontalCompressionResistancePriority="280" verticalCompressionResistancePriority="280" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="280" id="xDq-gJ-wfb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="280" verticalCompressionResistancePriority="280" image="blank_profile" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-9W-pm9">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="58Z-9W-pm9" firstAttribute="top" secondItem="T7R-qK-INv" secondAttribute="bottom" constant="70" id="UCO-sX-i78"/>
+                            <constraint firstAttribute="centerX" secondItem="58Z-9W-pm9" secondAttribute="centerX" id="oIc-RN-hO8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="58Z-9W-pm9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="UCO-sX-i78"/>
+                                <exclude reference="oIc-RN-hO8"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="58Z-9W-pm9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="UCO-sX-i78"/>
+                                <include reference="oIc-RN-hO8"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="5EJ-s9-DSr"/>
+                    <connections>
+                        <outlet property="profilePic" destination="58Z-9W-pm9" id="MUC-8p-cng"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z3-sr-Nbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1885.5" y="-71"/>
+            <point key="canvasLocation" x="1900.5" y="-111"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GLY-0J-q3p">
@@ -252,4 +281,7 @@
             <point key="canvasLocation" x="155" y="95"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blank_profile" width="140" height="140"/>
+    </resources>
 </document>

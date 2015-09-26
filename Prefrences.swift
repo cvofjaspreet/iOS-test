@@ -22,7 +22,7 @@ class Prefrences {
     }
     
     func getCountryCode() -> String {
-     return defaults.stringForKey(countryCodeKeyConstant)!
+     return defaults.stringForKey(countryCodeKeyConstant) ?? "1"
     }
     
     func setMobileNumber(mobileNumber : String){
@@ -30,7 +30,7 @@ class Prefrences {
     }
     
     func getMobileNumber() -> String {
-        return defaults.stringForKey(mobileNumberKeyConstant)!
+        return defaults.stringForKey(mobileNumberKeyConstant) ?? ""
     }
    
     func setCountryName(mobileNumber : String){
@@ -38,7 +38,7 @@ class Prefrences {
     }
     
     func getCountryName() -> String {
-        return defaults.stringForKey(countryNameKeyConstant)!
+        return defaults.stringForKey(countryNameKeyConstant) ?? "United States"
     }
 
 }

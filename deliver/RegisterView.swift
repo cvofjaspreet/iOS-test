@@ -38,9 +38,14 @@ class RegisterView: UIViewController {
         
         Prefrences.getInstance.setCountrycode(countryCode.text!)
         Prefrences.getInstance.setMobileNumber(mobileNumber.text)
-        
+        switchToViewController("setProfile")
     }
     
+    func switchToViewController(identifier: String) {
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
+        self.navigationController?.setViewControllers([viewController], animated: true)
+        
+    }
     
     @IBAction func onTextChange(sender: UITextField) {
         
@@ -62,10 +67,15 @@ class RegisterView: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-       
-        countryName.titleLabel?.text=Prefrences.getInstance.getCountryName()
-     
+        var country=Prefrences.getInstance.getCountryName()
         countryCode.text=Prefrences.getInstance.getCountryCode()
+        countryName.setTitle(country, forState: .Normal)
+        if(count(mobileNumber.text)>=1){
+        var text="+"
+        text+=countryCode.text!
+        text+=mobileNumber.text
+        self.title=text
+        }
     }
 }
 
