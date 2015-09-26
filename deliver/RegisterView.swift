@@ -16,15 +16,19 @@ class RegisterView: UIViewController {
     
     @IBOutlet weak var mobileNumber: UITextField!
     
+    @IBOutlet weak var countryName: UIButton!
     
     override func viewDidLoad() {
         
         doneButton.hidden=true
         
+        println("viewDidLoad")
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        println("didReceiveMemoryWarning")
         // Dispose of any resources that can be recreated.
     }
 
@@ -48,8 +52,8 @@ class RegisterView: UIViewController {
         
         
         if(count(sender.text)>=1){
-          var text=""
-          text=countryCode.text!
+          var text="+"
+          text+=countryCode.text!
           text+=mobileNumber.text
           self.title=text
         }else{
@@ -57,5 +61,11 @@ class RegisterView: UIViewController {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+       
+        countryName.titleLabel?.text=Prefrences.getInstance.getCountryName()
+     
+        countryCode.text=Prefrences.getInstance.getCountryCode()
+    }
 }
 
