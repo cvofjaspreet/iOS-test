@@ -6,6 +6,24 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Landing View-->
+        <scene sceneID="IS8-e1-OPZ">
+            <objects>
+                <viewController storyboardIdentifier="landingView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fp4-PU-zH0" customClass="LandingView" customModule="deliver" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sgI-sv-mq9"/>
+                        <viewControllerLayoutGuide type="bottom" id="QlY-tL-Hiw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="en6-NI-2Y0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="atV-94-Xw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2775" y="230"/>
+        </scene>
         <!--Your Phone Number-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>

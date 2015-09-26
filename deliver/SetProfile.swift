@@ -22,6 +22,21 @@ class SetProfile: UIViewController , UIImagePickerControllerDelegate, UINavigati
         profilePic.addGestureRecognizer(tap)
         profilePic.userInteractionEnabled = true
         
+        var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "onDoneClick:")
+        self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem], animated: true)
+        
+        
+    }
+    
+    func onDoneClick (sender:UIButton) {
+    switchToViewController("landingView")
+    
+    }
+    
+    func switchToViewController(identifier: String) {
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
+        self.navigationController?.setViewControllers([viewController], animated: true)
+        
     }
     
     func onProfileClick()
