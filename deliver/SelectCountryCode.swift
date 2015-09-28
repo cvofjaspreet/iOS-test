@@ -25,13 +25,13 @@ class SelectCountryCode: UITableViewController{
         
         loadCountries();
        
-        var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "onDoneClick:")
+        let rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "onDoneClick:")
         self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem], animated: true)
     }
     
     func onDoneClick (sender:UIButton) {
        
-        if let indexPath = tableView.indexPathForSelectedRow(){
+        if let indexPath = tableView.indexPathForSelectedRow{
             var dictionary : NSDictionary!
             var dict=names[keys[indexPath.section]] as! [AnyObject]
             dictionary=dict[indexPath.row] as! NSDictionary
@@ -50,9 +50,9 @@ class SelectCountryCode: UITableViewController{
         if let path = NSBundle.mainBundle().pathForResource("CountryList", ofType: "plist") {
             names = NSDictionary(contentsOfFile: path)
         }
-        if let dict = names {
+        if let _ = names {
             keys=(names.allKeys as! [String])
-            keys.sort(){ $0 < $1 }
+            keys.sortInPlace(){ $0 < $1 }
         }
     
     }
@@ -69,14 +69,14 @@ class SelectCountryCode: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var dict=names[keys[section]] as! [AnyObject]
-        return count(dict)
+        let dict=names[keys[section]] as! [AnyObject]
+        return dict.count
     }
  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "myCell"
         
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: cellIdentifier)
         }
@@ -88,11 +88,18 @@ class SelectCountryCode: UITableViewController{
         return cell!
     }
     
-   
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+            return self.keys[section];
+          }
     
     override func didMoveToParentViewController(parent: UIViewController?) {
         if (!(parent?.isEqual(self.parentViewController) ?? false)) {
                    }
+    }
+    
+    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+        return self.keys
     }
  
 }

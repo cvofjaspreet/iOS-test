@@ -22,13 +22,13 @@ class RegisterView: UIViewController {
         
         doneButton.hidden=true
         
-        println("viewDidLoad")
+        print("viewDidLoad")
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        println("didReceiveMemoryWarning")
+        print("didReceiveMemoryWarning")
         // Dispose of any resources that can be recreated.
     }
 
@@ -37,29 +37,33 @@ class RegisterView: UIViewController {
         
         
         Prefrences.getInstance.setCountrycode(countryCode.text!)
-        Prefrences.getInstance.setMobileNumber(mobileNumber.text)
+        Prefrences.getInstance.setMobileNumber(mobileNumber.text!)
+        Prefrences.getInstance.setCountryName((countryName.titleLabel?.text!)!)
         switchToViewController("setProfile")
     }
     
     func switchToViewController(identifier: String) {
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+        }
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! SetProfile
         self.navigationController?.setViewControllers([viewController], animated: true)
         
     }
     
     @IBAction func onTextChange(sender: UITextField) {
         
-        if(count(sender.text)>=6){
+        if(sender.text!.characters.count>=6){
             doneButton.hidden=false
         }else{
             doneButton.hidden=true
         }
         
         
-        if(count(sender.text)>=1){
+        if(sender.text!.characters.count>=1){
           var text="+"
           text+=countryCode.text!
-          text+=mobileNumber.text
+          text+=mobileNumber.text!
           self.title=text
         }else{
             self.title="Your Phone Number"
@@ -67,13 +71,14 @@ class RegisterView: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        var country=Prefrences.getInstance.getCountryName()
+        let country=Prefrences.getInstance.getCountryName()
+        print(country)
         countryCode.text=Prefrences.getInstance.getCountryCode()
         countryName.setTitle(country, forState: .Normal)
-        if(count(mobileNumber.text)>=1){
+        if(mobileNumber.text!.characters.count>=1){
         var text="+"
         text+=countryCode.text!
-        text+=mobileNumber.text
+        text+=mobileNumber.text!
         self.title=text
         }
     }

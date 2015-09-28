@@ -15,39 +15,42 @@ class SetProfile: UIViewController , UIImagePickerControllerDelegate, UINavigati
     
        let imagePicker = UIImagePickerController()
     override func viewDidLoad() {
-        println("viewDidLoad")
+        print("viewDidLoad")
        self.navigationItem.title="Create Profile"
         imagePicker.delegate = self
-        var tap = UITapGestureRecognizer(target: self, action: Selector("onProfileClick"))
+        let tap = UITapGestureRecognizer(target: self, action: Selector("onProfileClick"))
         profilePic.addGestureRecognizer(tap)
         profilePic.userInteractionEnabled = true
         
-        var rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "onDoneClick:")
+        let rightAddBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: "onDoneClick:")
         self.navigationItem.setRightBarButtonItems([rightAddBarButtonItem], animated: true)
         
         
     }
     
     func onDoneClick (sender:UIButton) {
+    Prefrences.getInstance.setUserRegistered(true)
     switchToViewController("landingView")
-    
     }
     
     func switchToViewController(identifier: String) {
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! UIViewController
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+        }
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! LandingView
         self.navigationController?.setViewControllers([viewController], animated: true)
         
     }
     
     func onProfileClick()
     {
-        println("onProfileClick")
+        print("onProfileClick")
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .PhotoLibrary
         
         presentViewController(imagePicker, animated: true, completion: nil)
     }
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             profilePic.image = pickedImage
         }

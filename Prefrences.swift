@@ -13,6 +13,7 @@ class Prefrences {
     let countryCodeKeyConstant = "countryCode"
     let mobileNumberKeyConstant = "mobileNumber"
     let countryNameKeyConstant = "countryName"
+    let isRegisteredKeyConstant = "isRegistered"
     
     static let getInstance = Prefrences()
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -39,6 +40,14 @@ class Prefrences {
     
     func getCountryName() -> String {
         return defaults.stringForKey(countryNameKeyConstant) ?? "United States"
+    }
+    
+    func setUserRegistered(isRegistered : Bool){
+        defaults.setObject(isRegistered, forKey: isRegisteredKeyConstant)
+    }
+    
+    func isUserRegistered() -> Bool {
+        return defaults.boolForKey(isRegisteredKeyConstant) ?? false
     }
 
 }

@@ -10,21 +10,43 @@ import Foundation
 import UIKit
 import GoogleMaps
 
-class LandingView: UIViewController {
+class LandingView: UIViewController , CLLocationManagerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var camera = GMSCameraPosition.cameraWithLatitude(-33.86,
-            longitude: 151.20, zoom: 6)
-        var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
-        mapView.myLocationEnabled = true
-        self.view = mapView
-        
-        var marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(-33.86, 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        if(isUserRegistered()){
+            self.title="Order at ?"
+            let camera = GMSCameraPosition.cameraWithLatitude(30.7800,
+                longitude: 76.6900, zoom: 6)
+            let mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
+            mapView.myLocationEnabled = true
+            self.view = mapView
+            
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2DMake(30.7800,76.6900)
+            marker.title = "Mohali"
+            marker.snippet = "Punjab,India"
+            marker.map = mapView
+            
+        }else{
+            switchToViewController("registerUser")
+        }
     }
+    
+    func isUserRegistered() ->Bool{
+    
+    return Prefrences.getInstance.isUserRegistered()
+    }
+    
+    func switchToViewController(identifier: String) {
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+        }
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! RegisterView
+        self.navigationController?.setViewControllers([viewController], animated: true)
+        
+    }
+
+    
 }
