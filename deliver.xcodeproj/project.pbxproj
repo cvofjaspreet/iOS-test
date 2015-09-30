@@ -17,11 +17,32 @@
 		1B74EE7F1BADA2540042A962 /* Prefrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74EE7E1BADA2540042A962 /* Prefrences.swift */; };
 		1B94E98F1BB7240200BCC6A1 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B94E98E1BB7240200BCC6A1 /* LandingView.swift */; };
 		1BAE6A2E1BB9B41000651CAF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAE6A2D1BB9B41000651CAF /* CoreLocation.framework */; };
+		1BD32C8B1BBC651300688257 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD32C891BBC651300688257 /* Fabric.framework */; settings = {ASSET_TAGS = (); }; };
+		1BD32C8C1BBC651300688257 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD32C8A1BBC651300688257 /* Crashlytics.framework */; settings = {ASSET_TAGS = (); }; };
+		1BD32C901BBC689D00688257 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD32C8D1BBC689D00688257 /* TwitterKit.framework */; settings = {ASSET_TAGS = (); }; };
+		1BD32C911BBC689D00688257 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1BD32C8E1BBC689D00688257 /* TwitterKitResources.bundle */; settings = {ASSET_TAGS = (); }; };
+		1BD32C921BBC689D00688257 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD32C8F1BBC689D00688257 /* TwitterCore.framework */; settings = {ASSET_TAGS = (); }; };
+		1BD32C951BBC6A7600688257 /* DigitsKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD32C931BBC6A7600688257 /* DigitsKit.framework */; settings = {ASSET_TAGS = (); }; };
+		1BD32C961BBC6A7600688257 /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1BD32C941BBC6A7600688257 /* DigitsKitResources.bundle */; settings = {ASSET_TAGS = (); }; };
+		1BD32C991BBC6C4800688257 /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD32C971BBC6C4800688257 /* MoPub.framework */; settings = {ASSET_TAGS = (); }; };
+		1BD32C9A1BBC6C4800688257 /* MoPub.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1BD32C981BBC6C4800688257 /* MoPub.bundle */; settings = {ASSET_TAGS = (); }; };
 		1BD7C92D1BB6F26700E40BF8 /* SetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7C92C1BB6F26700E40BF8 /* SetProfile.swift */; };
 		1BE8C4901BB06A410026D6D4 /* SelectCountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8C48F1BB06A410026D6D4 /* SelectCountryCode.swift */; };
 		1BE8C4921BB06EF10026D6D4 /* CountryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8C4911BB06EF10026D6D4 /* CountryList.plist */; };
 		90FEC9823FAAD84BF2D3E92D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2512BCA5A0CB26B3331F223E /* libPods.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		1B0060791BBAEECB00F9110B /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		1B74EE6C1BAD9B330042A962 /* PBXContainerItemProxy */ = {
@@ -35,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		16385E04046D9281E60A7B2B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1B0060781BBAEDAF00F9110B /* deliver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = deliver.entitlements; sourceTree = "<group>"; };
 		1B74EE531BAD9B330042A962 /* deliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B74EE571BAD9B330042A962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B74EE581BAD9B330042A962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +71,15 @@
 		1B74EE7E1BADA2540042A962 /* Prefrences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefrences.swift; sourceTree = "<group>"; };
 		1B94E98E1BB7240200BCC6A1 /* LandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		1BAE6A2D1BB9B41000651CAF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1BD32C891BBC651300688257 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		1BD32C8A1BBC651300688257 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		1BD32C8D1BBC689D00688257 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		1BD32C8E1BBC689D00688257 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		1BD32C8F1BBC689D00688257 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		1BD32C931BBC6A7600688257 /* DigitsKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DigitsKit.framework; sourceTree = "<group>"; };
+		1BD32C941BBC6A7600688257 /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = DigitsKitResources.bundle; path = DigitsKit.framework/Versions/A/Resources/DigitsKitResources.bundle; sourceTree = "<group>"; };
+		1BD32C971BBC6C4800688257 /* MoPub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MoPub.framework; sourceTree = "<group>"; };
+		1BD32C981BBC6C4800688257 /* MoPub.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MoPub.bundle; path = MoPub.framework/Versions/A/Resources/MoPub.bundle; sourceTree = "<group>"; };
 		1BD7C92C1BB6F26700E40BF8 /* SetProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetProfile.swift; sourceTree = "<group>"; };
 		1BE8C48F1BB06A410026D6D4 /* SelectCountryCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCountryCode.swift; sourceTree = "<group>"; };
 		1BE8C4911BB06EF10026D6D4 /* CountryList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CountryList.plist; path = deliver/CountryList.plist; sourceTree = "<group>"; };
@@ -62,7 +93,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BAE6A2E1BB9B41000651CAF /* CoreLocation.framework in Frameworks */,
+				1BD32C921BBC689D00688257 /* TwitterCore.framework in Frameworks */,
+				1BD32C901BBC689D00688257 /* TwitterKit.framework in Frameworks */,
+				1BD32C951BBC6A7600688257 /* DigitsKit.framework in Frameworks */,
 				90FEC9823FAAD84BF2D3E92D /* libPods.a in Frameworks */,
+				1BD32C8C1BBC651300688257 /* Crashlytics.framework in Frameworks */,
+				1BD32C991BBC6C4800688257 /* MoPub.framework in Frameworks */,
+				1BD32C8B1BBC651300688257 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +136,7 @@
 		1B74EE551BAD9B330042A962 /* deliver */ = {
 			isa = PBXGroup;
 			children = (
+				1B0060781BBAEDAF00F9110B /* deliver.entitlements */,
 				1BD7C9211BB6820800E40BF8 /* View Controllers */,
 				1B74EE7D1BADA2350042A962 /* Database */,
 				1B74EE581BAD9B330042A962 /* AppDelegate.swift */,
@@ -169,6 +207,15 @@
 		EC17EBFF197645B9AF49CA50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1BD32C971BBC6C4800688257 /* MoPub.framework */,
+				1BD32C981BBC6C4800688257 /* MoPub.bundle */,
+				1BD32C931BBC6A7600688257 /* DigitsKit.framework */,
+				1BD32C941BBC6A7600688257 /* DigitsKitResources.bundle */,
+				1BD32C8D1BBC689D00688257 /* TwitterKit.framework */,
+				1BD32C8E1BBC689D00688257 /* TwitterKitResources.bundle */,
+				1BD32C8F1BBC689D00688257 /* TwitterCore.framework */,
+				1BD32C891BBC651300688257 /* Fabric.framework */,
+				1BD32C8A1BBC651300688257 /* Crashlytics.framework */,
 				1BAE6A2D1BB9B41000651CAF /* CoreLocation.framework */,
 				2512BCA5A0CB26B3331F223E /* libPods.a */,
 			);
@@ -187,8 +234,10 @@
 				1B74EE501BAD9B330042A962 /* Frameworks */,
 				1B74EE511BAD9B330042A962 /* Resources */,
 				3CB78B1D2CD567C600CB44DA /* Copy Pods Resources */,
+				1BD32C701BBC61C400688257 /* Run Script */,
 			);
 			buildRules = (
+				1B0060791BBAEECB00F9110B /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -229,6 +278,11 @@
 					1B74EE521BAD9B330042A962 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = GUB83299ZH;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					1B74EE6A1BAD9B330042A962 = {
 						CreatedOnToolsVersion = 6.4;
@@ -262,8 +316,11 @@
 			files = (
 				1B74EE611BAD9B330042A962 /* Main.storyboard in Resources */,
 				1BE8C4921BB06EF10026D6D4 /* CountryList.plist in Resources */,
+				1BD32C961BBC6A7600688257 /* DigitsKitResources.bundle in Resources */,
 				1B74EE661BAD9B330042A962 /* LaunchScreen.xib in Resources */,
+				1BD32C9A1BBC6C4800688257 /* MoPub.bundle in Resources */,
 				1B74EE631BAD9B330042A962 /* Images.xcassets in Resources */,
+				1BD32C911BBC689D00688257 /* TwitterKitResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +334,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1BD32C701BBC61C400688257 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 203c2be0b95a529dd193c9cea4cd7e442bf50da3 e2400bfe721d0a0ffb1345619481706e971f491ed89e2f34e5806543d85b4477";
+		};
 		3CB78B1D2CD567C600CB44DA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,9 +450,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -402,8 +475,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "253a4aed-ebd2-4e69-a3b3-83a363483701";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -424,11 +499,14 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -439,6 +517,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "253a4aed-ebd2-4e69-a3b3-83a363483701";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -449,14 +528,19 @@
 			baseConfigurationReference = 16385E04046D9281E60A7B2B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = deliver/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaspreet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wegile.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "253a4aed-ebd2-4e69-a3b3-83a363483701";
+				STRIP_INSTALLED_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -465,14 +549,19 @@
 			baseConfigurationReference = 849ED62524241B1076189DF2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: cvofjaspreet@gmail.com (9WB425F7VM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = deliver/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaspreet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wegile.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "253a4aed-ebd2-4e69-a3b3-83a363483701";
+				STRIP_INSTALLED_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -490,7 +579,7 @@
 				);
 				INFOPLIST_FILE = deliverTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaspreet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wegile.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/deliver.app/deliver";
 			};
@@ -506,7 +595,7 @@
 				);
 				INFOPLIST_FILE = deliverTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaspreet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wegile.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/deliver.app/deliver";
 			};
@@ -522,7 +611,7 @@
 				1B74EE741BAD9B330042A962 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		1B74EE751BAD9B330042A962 /* Build configuration list for PBXNativeTarget "deliver" */ = {
 			isa = XCConfigurationList;
@@ -531,7 +620,7 @@
 				1B74EE771BAD9B330042A962 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		1B74EE781BAD9B330042A962 /* Build configuration list for PBXNativeTarget "deliverTests" */ = {
 			isa = XCConfigurationList;
@@ -540,7 +629,7 @@
 				1B74EE7A1BAD9B330042A962 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 import GoogleMaps
+import Fabric
+import Crashlytics
+import TwitterKit
+import DigitsKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
        GMSServices.provideAPIKey("AIzaSyDoifodEpNd1F6UFIaTHf52115I4d7A8wA")
+        Fabric.with([Crashlytics.self(), Twitter.self(), Digits.self()])
+
+
         return true
     }
 

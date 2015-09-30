@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x7I-fN-u9D">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -24,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atV-94-Xw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821" y="-621"/>
+            <point key="canvasLocation" x="1893" y="-693"/>
         </scene>
         <!--Your Phone Number-->
         <scene sceneID="ufC-wZ-h7g">
@@ -249,22 +248,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="280" verticalCompressionResistancePriority="280" image="blank_profile" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-9W-pm9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="280" verticalCompressionResistancePriority="280" image="blank_profile" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-9W-pm9">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="AfT-UT-nqn"/>
+                                    <constraint firstAttribute="width" constant="140" id="J92-LL-ozo"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AfT-UT-nqn"/>
+                                        <exclude reference="J92-LL-ozo"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="AfT-UT-nqn"/>
+                                        <include reference="J92-LL-ozo"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="58Z-9W-pm9" firstAttribute="top" secondItem="T7R-qK-INv" secondAttribute="bottom" constant="70" id="UCO-sX-i78"/>
-                            <constraint firstAttribute="centerX" secondItem="58Z-9W-pm9" secondAttribute="centerX" id="oIc-RN-hO8"/>
+                            <constraint firstItem="58Z-9W-pm9" firstAttribute="top" secondItem="T7R-qK-INv" secondAttribute="bottom" constant="70" id="Imn-ug-DDq"/>
+                            <constraint firstItem="58Z-9W-pm9" firstAttribute="centerX" secondItem="xDq-gJ-wfb" secondAttribute="centerX" id="NMt-HB-fuR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="58Z-9W-pm9"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="UCO-sX-i78"/>
-                                <exclude reference="oIc-RN-hO8"/>
+                                <exclude reference="Imn-ug-DDq"/>
+                                <exclude reference="NMt-HB-fuR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -272,8 +287,8 @@
                                 <include reference="58Z-9W-pm9"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="UCO-sX-i78"/>
-                                <include reference="oIc-RN-hO8"/>
+                                <include reference="Imn-ug-DDq"/>
+                                <include reference="NMt-HB-fuR"/>
                             </mask>
                         </variation>
                     </view>
@@ -284,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z3-sr-Nbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1870.5" y="-33"/>
+            <point key="canvasLocation" x="1893" y="-53"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iVz-6D-jkX">
