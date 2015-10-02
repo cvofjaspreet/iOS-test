@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x7I-fN-u9D">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -18,13 +17,58 @@
                     <view key="view" contentMode="scaleToFill" id="en6-NI-2Y0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="your location ?" translatesAutoresizingMaskIntoConstraints="NO" id="L7M-wy-pMU">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L7M-wy-pMU" firstAttribute="leading" secondItem="en6-NI-2Y0" secondAttribute="leading" id="TPN-Ke-xBJ"/>
+                            <constraint firstAttribute="trailing" secondItem="L7M-wy-pMU" secondAttribute="trailing" id="ypP-td-BNd"/>
+                            <constraint firstItem="L7M-wy-pMU" firstAttribute="top" secondItem="sgI-sv-mq9" secondAttribute="bottom" id="yps-rw-Zg6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="L7M-wy-pMU"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="TPN-Ke-xBJ"/>
+                                <exclude reference="ypP-td-BNd"/>
+                                <exclude reference="yps-rw-Zg6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="L7M-wy-pMU"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="TPN-Ke-xBJ"/>
+                                <include reference="ypP-td-BNd"/>
+                                <include reference="yps-rw-Zg6"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="25v-mP-zWJ"/>
+                    <navigationItem key="navigationItem" id="25v-mP-zWJ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="m83-2O-PdM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6LI-pU-6ql">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="onEditLocationClick:" destination="Fp4-PU-zH0" eventType="touchUpInside" id="eYd-8J-3CT"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchView" destination="L7M-wy-pMU" id="sbM-vx-uU9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atV-94-Xw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1821" y="-621"/>
+            <point key="canvasLocation" x="1870.5" y="-730"/>
         </scene>
         <!--Your Phone Number-->
         <scene sceneID="ufC-wZ-h7g">
@@ -235,7 +279,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYD-As-Fwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893" y="588"/>
+            <point key="canvasLocation" x="1870.5" y="587"/>
         </scene>
         <!--Set Profile-->
         <scene sceneID="f5E-2g-qHd">
@@ -249,22 +293,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="280" verticalCompressionResistancePriority="280" image="blank_profile" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-9W-pm9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="280" verticalCompressionResistancePriority="280" image="blank_profile" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-9W-pm9">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="AfT-UT-nqn"/>
+                                    <constraint firstAttribute="width" constant="140" id="J92-LL-ozo"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AfT-UT-nqn"/>
+                                        <exclude reference="J92-LL-ozo"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="AfT-UT-nqn"/>
+                                        <include reference="J92-LL-ozo"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="58Z-9W-pm9" firstAttribute="top" secondItem="T7R-qK-INv" secondAttribute="bottom" constant="70" id="UCO-sX-i78"/>
-                            <constraint firstAttribute="centerX" secondItem="58Z-9W-pm9" secondAttribute="centerX" id="oIc-RN-hO8"/>
+                            <constraint firstItem="58Z-9W-pm9" firstAttribute="top" secondItem="T7R-qK-INv" secondAttribute="bottom" constant="70" id="Imn-ug-DDq"/>
+                            <constraint firstItem="58Z-9W-pm9" firstAttribute="centerX" secondItem="xDq-gJ-wfb" secondAttribute="centerX" id="NMt-HB-fuR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="58Z-9W-pm9"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="UCO-sX-i78"/>
-                                <exclude reference="oIc-RN-hO8"/>
+                                <exclude reference="Imn-ug-DDq"/>
+                                <exclude reference="NMt-HB-fuR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -272,8 +332,8 @@
                                 <include reference="58Z-9W-pm9"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="UCO-sX-i78"/>
-                                <include reference="oIc-RN-hO8"/>
+                                <include reference="Imn-ug-DDq"/>
+                                <include reference="NMt-HB-fuR"/>
                             </mask>
                         </variation>
                     </view>
@@ -284,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Z3-sr-Nbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1870.5" y="-33"/>
+            <point key="canvasLocation" x="1870.5" y="-69"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iVz-6D-jkX">
@@ -302,7 +362,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQo-Kb-MPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="633" y="-626"/>
+            <point key="canvasLocation" x="634.5" y="-730"/>
         </scene>
     </scenes>
     <resources>

@@ -20,6 +20,7 @@
 		1BD7C92D1BB6F26700E40BF8 /* SetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD7C92C1BB6F26700E40BF8 /* SetProfile.swift */; };
 		1BE8C4901BB06A410026D6D4 /* SelectCountryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8C48F1BB06A410026D6D4 /* SelectCountryCode.swift */; };
 		1BE8C4921BB06EF10026D6D4 /* CountryList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8C4911BB06EF10026D6D4 /* CountryList.plist */; };
+		1BEEE56D1BBE57DA00FFD699 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAE6A2D1BB9B41000651CAF /* CoreLocation.framework */; };
 		90FEC9823FAAD84BF2D3E92D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2512BCA5A0CB26B3331F223E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BEEE56D1BBE57DA00FFD699 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +381,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -402,6 +405,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "253a4aed-ebd2-4e69-a3b3-83a363483701";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -424,7 +428,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -439,6 +444,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "253a4aed-ebd2-4e69-a3b3-83a363483701";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -449,14 +455,15 @@
 			baseConfigurationReference = 16385E04046D9281E60A7B2B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = deliver/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaspreet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wegile.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "253a4aed-ebd2-4e69-a3b3-83a363483701";
 			};
 			name = Debug;
 		};
@@ -465,14 +472,15 @@
 			baseConfigurationReference = 849ED62524241B1076189DF2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: cvofjaspreet@gmail.com (9WB425F7VM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Oberoi (KHX4P76LKY)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = deliver/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaspreet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wegile.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "253a4aed-ebd2-4e69-a3b3-83a363483701";
 			};
 			name = Release;
 		};
@@ -490,7 +498,7 @@
 				);
 				INFOPLIST_FILE = deliverTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaspreet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wegile.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/deliver.app/deliver";
 			};
@@ -506,7 +514,7 @@
 				);
 				INFOPLIST_FILE = deliverTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jaspreet.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wegile.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/deliver.app/deliver";
 			};
