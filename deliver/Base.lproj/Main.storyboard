@@ -51,7 +51,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="25v-mP-zWJ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="m83-2O-PdM">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="m83-2O-PdM">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6LI-pU-6ql">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -61,6 +61,16 @@
                                 </connections>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="OFv-sf-t4A">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pP0-yF-VL2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                            </button>
+                            <connections>
+                                <segue destination="Bex-za-qav" kind="push" id="z2L-aw-hbc"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchView" destination="L7M-wy-pMU" id="sbM-vx-uU9"/>
@@ -69,6 +79,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atV-94-Xw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1870.5" y="-730"/>
+        </scene>
+        <!--Base View-->
+        <scene sceneID="qD3-UV-ico">
+            <objects>
+                <collectionViewController storyboardIdentifier="baseView" id="Bex-za-qav" customClass="BaseView" customModule="deliver" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TwV-fV-FMW">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pid-a6-xfB">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zcG-g5-7q5">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Bex-za-qav" id="UAl-rx-nCq"/>
+                            <outlet property="delegate" destination="Bex-za-qav" id="8yM-kG-d4e"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="pxs-zE-U3n"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02w-u4-L9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2673" y="-730"/>
         </scene>
         <!--Your Phone Number-->
         <scene sceneID="ufC-wZ-h7g">
@@ -236,6 +280,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ypq-qb-43b"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kc3-G7-igi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the verification code sent via SMS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-eH-mtI">
@@ -244,7 +289,7 @@
                                     <constraint firstAttribute="height" constant="44" id="uQP-8O-o8l"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -281,12 +326,12 @@
                                 <exclude reference="Ugc-f7-Wor"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0Rv-Uy-8DK"/>
-                                <exclude reference="fU4-dl-rwX"/>
-                                <exclude reference="unt-uY-736"/>
                                 <exclude reference="0KZ-KK-Ljz"/>
                                 <exclude reference="8Al-zt-x12"/>
                                 <exclude reference="mJa-Ot-ecK"/>
+                                <exclude reference="0Rv-Uy-8DK"/>
+                                <exclude reference="fU4-dl-rwX"/>
+                                <exclude reference="unt-uY-736"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -295,12 +340,12 @@
                                 <include reference="Ugc-f7-Wor"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0Rv-Uy-8DK"/>
-                                <include reference="fU4-dl-rwX"/>
-                                <include reference="unt-uY-736"/>
                                 <include reference="0KZ-KK-Ljz"/>
                                 <include reference="8Al-zt-x12"/>
                                 <include reference="mJa-Ot-ecK"/>
+                                <include reference="0Rv-Uy-8DK"/>
+                                <include reference="fU4-dl-rwX"/>
+                                <include reference="unt-uY-736"/>
                             </mask>
                         </variation>
                     </view>
@@ -409,8 +454,7 @@
                                         <exclude reference="mYX-UH-IYe"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="79" y="285" width="243" height="30"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="mYX-UH-IYe"/>
                                     </mask>
@@ -431,11 +475,11 @@
                                 <exclude reference="gf4-25-za9"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Imn-ug-DDq"/>
-                                <exclude reference="NMt-HB-fuR"/>
                                 <exclude reference="XnW-9G-up3"/>
                                 <exclude reference="bOQ-e1-VXc"/>
                                 <exclude reference="grc-so-epA"/>
+                                <exclude reference="Imn-ug-DDq"/>
+                                <exclude reference="NMt-HB-fuR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -444,11 +488,11 @@
                                 <include reference="gf4-25-za9"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Imn-ug-DDq"/>
-                                <include reference="NMt-HB-fuR"/>
                                 <exclude reference="XnW-9G-up3"/>
                                 <include reference="bOQ-e1-VXc"/>
                                 <include reference="grc-so-epA"/>
+                                <include reference="Imn-ug-DDq"/>
+                                <include reference="NMt-HB-fuR"/>
                             </mask>
                         </variation>
                     </view>
