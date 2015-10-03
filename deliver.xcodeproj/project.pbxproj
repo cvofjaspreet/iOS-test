@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B143ED81BC0295100BFA364 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B143ED71BC0295100BFA364 /* BaseView.swift */; settings = {ASSET_TAGS = (); }; };
 		1B143EDE1BC0347200BFA364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B143EDC1BC0347200BFA364 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		1B143EE11BC03A7D00BFA364 /* BaseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B143EE01BC03A7D00BFA364 /* BaseViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		1B24A0011BBFE22D0068CA00 /* VerifyUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B24A0001BBFE22D0068CA00 /* VerifyUserView.swift */; settings = {ASSET_TAGS = (); }; };
 		1B74EE591BAD9B330042A962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74EE581BAD9B330042A962 /* AppDelegate.swift */; };
 		1B74EE5C1BAD9B330042A962 /* deliver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B74EE5A1BAD9B330042A962 /* deliver.xcdatamodeld */; };
@@ -43,6 +44,7 @@
 		16385E04046D9281E60A7B2B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		1B143ED71BC0295100BFA364 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		1B143EDD1BC0347200BFA364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B143EE01BC03A7D00BFA364 /* BaseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewCell.swift; sourceTree = "<group>"; };
 		1B24A0001BBFE22D0068CA00 /* VerifyUserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyUserView.swift; sourceTree = "<group>"; };
 		1B74EE531BAD9B330042A962 /* deliver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = deliver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B74EE571BAD9B330042A962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B143EDF1BC03A6200BFA364 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1B143EE01BC03A7D00BFA364 /* BaseViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		1B74EE4A1BAD9B330042A962 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +122,7 @@
 		1B74EE551BAD9B330042A962 /* deliver */ = {
 			isa = PBXGroup;
 			children = (
+				1B143EDF1BC03A6200BFA364 /* Cells */,
 				1BD7C9211BB6820800E40BF8 /* View Controllers */,
 				1B74EE7D1BADA2350042A962 /* Database */,
 				1B74EE581BAD9B330042A962 /* AppDelegate.swift */,
@@ -344,6 +355,7 @@
 				1B74EE5E1BAD9B330042A962 /* RegisterView.swift in Sources */,
 				1B143ED81BC0295100BFA364 /* BaseView.swift in Sources */,
 				1B94E98F1BB7240200BCC6A1 /* LandingView.swift in Sources */,
+				1B143EE11BC03A7D00BFA364 /* BaseViewCell.swift in Sources */,
 				1B24A0011BBFE22D0068CA00 /* VerifyUserView.swift in Sources */,
 				1BEF42581BBEE9BE00A5DC6C /* JXMPPConnection.swift in Sources */,
 				1BD7C92D1BB6F26700E40BF8 /* SetProfile.swift in Sources */,

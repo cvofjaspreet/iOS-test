@@ -42,6 +42,17 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
         }
     }
    
+    @IBAction func getBaseView(sender: UIButton) {
+        
+        pushToViewController("baseView")
+    }
+    
+    func pushToViewController(identifier: String) {
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! BaseView
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
     override func viewWillAppear(animated: Bool) {
         print("viewWillAppear")
     }
@@ -99,7 +110,11 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location=locations.last
         locationManager!.stopUpdatingLocation()
-        updateLocationOnUi()
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(self.location!.coordinate.latitude,self.location!.coordinate.longitude)
+        marker.map = self.mapView
+        let locationUpdate = GMSCameraPosition.cameraWithLatitude(self.location!.coordinate.latitude,longitude: self.location!.coordinate.longitude, zoom: 6)
+        self.mapView!.camera = locationUpdate
     }
   
     
@@ -111,7 +126,7 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
     let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
     let config = GMSPlacePickerConfig(viewport: viewport)
     placePicker = GMSPlacePicker(config: config)
-  
+    self.mapView?.clear()
     placePicker?.pickPlaceWithCallback({(place: GMSPlace?, error: NSError?) -> Void in
     self.searchView.becomeFirstResponder()
     if error != nil {
