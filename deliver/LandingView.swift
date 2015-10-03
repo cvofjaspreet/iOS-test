@@ -24,8 +24,9 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+          print("viewDidLoad")
         if(isUserRegistered()){
+            searchView.becomeFirstResponder()
             searchView.delegate = self
             self.title="Order at ?"
             let camera = GMSCameraPosition.cameraWithLatitude(0,
@@ -35,11 +36,20 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
             self.view.addSubview(mapView!)
             placeApi()
             pickAPlace()
+            
         }else{
             switchToViewController("registerUser")
         }
     }
+   
+    override func viewWillAppear(animated: Bool) {
+        print("viewWillAppear")
+    }
     
+    override func viewDidDisappear(animated: Bool) {
+        print("viewDidDisappear")
+    }
+   
     func placeApi(){
      placesClient = GMSPlacesClient()
     }
@@ -55,7 +65,7 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
     }
     
     @IBAction func onEditLocationClick(sender: AnyObject) {
-    
+      self.view.endEditing(true)
         updateLocationOnUi()
     
     }
@@ -94,15 +104,17 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
   
     
     func updateLocationOnUi(){
-    
+     self.view.endEditing(true)
     let center = CLLocationCoordinate2DMake(location!.coordinate.latitude,location!.coordinate.longitude)
     let northEast = CLLocationCoordinate2DMake(center.latitude + 0.001, center.longitude + 0.001)
     let southWest = CLLocationCoordinate2DMake(center.latitude - 0.001, center.longitude - 0.001)
     let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
     let config = GMSPlacePickerConfig(viewport: viewport)
     placePicker = GMSPlacePicker(config: config)
-    placePicker?.pickPlaceWithCallback({ (place: GMSPlace?, error: NSError?) -> Void in
-   if error != nil {
+  
+    placePicker?.pickPlaceWithCallback({(place: GMSPlace?, error: NSError?) -> Void in
+    self.searchView.becomeFirstResponder()
+    if error != nil {
     print("Pick Place error: \(error!.localizedDescription)")
     return
     }
@@ -119,7 +131,7 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
     
     //self.addressLabel.text = "\n".join(place.formattedAddress.componentsSeparatedByString(", "))
     } else {
-    self.title = "No place selected"
+    self.title = "Order at ?"
     // self.addressLabel.text = ""
     }
     })
@@ -130,6 +142,7 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
     func isUserRegistered() ->Bool{
     
     return Prefrences.getInstance.isUserRegistered()
+    
     }
     
     func switchToViewController(identifier: String) {

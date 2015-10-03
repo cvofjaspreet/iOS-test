@@ -39,15 +39,13 @@ class RegisterView: UIViewController {
         Prefrences.getInstance.setCountrycode(countryCode.text!)
         Prefrences.getInstance.setMobileNumber(mobileNumber.text!)
         Prefrences.getInstance.setCountryName((countryName.titleLabel?.text!)!)
-        switchToViewController("setProfile")
+        switchToViewController("verifyUser")
     }
     
     func switchToViewController(identifier: String) {
-        if let navController = self.navigationController {
-            navController.popViewControllerAnimated(true)
-        }
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! SetProfile
-        self.navigationController?.setViewControllers([viewController], animated: true)
+       
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! VerifyUserView
+        self.navigationController?.pushViewController(viewController, animated: true)
         
     }
     
