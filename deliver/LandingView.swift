@@ -25,7 +25,7 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
     override func viewDidLoad() {
         super.viewDidLoad()
           print("viewDidLoad")
-        if(isUserRegistered()){
+      
             searchView.becomeFirstResponder()
             searchView.delegate = self
             self.title="Order at ?"
@@ -36,23 +36,11 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
             self.view.addSubview(mapView!)
             placeApi()
             pickAPlace()
-            
-        }else{
-            switchToViewController("registerUser")
-        }
+       
     }
    
-    @IBAction func getBaseView(sender: UIButton) {
-        
-        pushToViewController("baseView")
-    }
     
-    func pushToViewController(identifier: String) {
-        
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! BaseView
-        self.navigationController?.pushViewController(viewController, animated: true)
-        
-    }
+  
     override func viewWillAppear(animated: Bool) {
         print("viewWillAppear")
     }
@@ -154,19 +142,5 @@ class LandingView: UIViewController , CLLocationManagerDelegate, UISearchBarDele
     
     
     
-    func isUserRegistered() ->Bool{
     
-    return Prefrences.getInstance.isUserRegistered()
-    
-    }
-    
-    func switchToViewController(identifier: String) {
-        if let navController = self.navigationController {
-            navController.popViewControllerAnimated(true)
-        }
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! RegisterView
-        self.navigationController?.setViewControllers([viewController], animated: true)
-        
-    }
-    
-}
+  }

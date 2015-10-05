@@ -24,7 +24,7 @@ class SetProfile: UIViewController , UIImagePickerControllerDelegate, UINavigati
         profilePic.addGestureRecognizer(tap)
         profilePic.userInteractionEnabled = true
         profilePic.layer.borderWidth=1.0
-        profilePic.layer.masksToBounds = false
+        profilePic.layer.masksToBounds = true
         profilePic.layer.borderColor = UIColor.whiteColor().CGColor
         profilePic.layer.cornerRadius = profilePic.frame.size.height/2
         profilePic.clipsToBounds = true
@@ -35,14 +35,14 @@ class SetProfile: UIViewController , UIImagePickerControllerDelegate, UINavigati
     
     func onDoneClick (sender:UIButton) {
     Prefrences.getInstance.setUserRegistered(true)
-    switchToViewController("landingView")
+    switchToViewController("baseView")
     }
     
     func switchToViewController(identifier: String) {
         if let navController = self.navigationController {
             navController.popToRootViewControllerAnimated(true)
         }
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! LandingView
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! BaseView
         self.navigationController?.setViewControllers([viewController], animated: true)
         
     }

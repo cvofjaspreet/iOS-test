@@ -9,20 +9,84 @@
 import Foundation
 import UIKit
 
-class BaseView: UICollectionViewController{
+class BaseView: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     
+    var screenWidth: CGFloat!
+    var screenHeight: CGFloat!
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+    override func viewDidLoad() {
+        
+        self.title="Select an Item"
+        
+        screenWidth = self.view.frame.width
+        screenHeight = self.view.frame.height
+        if(isUserRegistered()){
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        self.collectionView!.setCollectionViewLayout(layout, animated: false)
+        self.collectionView!.backgroundColor = UIColor.greenColor()
+        }else{
+            switchToViewController("registerUser")
+        }
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    
+    func switchToViewController(identifier: String) {
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+        }
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! RegisterView
+        self.navigationController?.setViewControllers([viewController], animated: true)
         
-        let cellIdentifier = "baseViewCell"
-        
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath)
-        
-        return cell
     }
 
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 21
+    }
+    
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    
+   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("baseViewCell", forIndexPath: indexPath) as! BaseViewCell
+        cell.backgroundColor = UIColor.whiteColor()
+        cell.layer.borderColor = UIColor.blackColor().CGColor
+        cell.layer.borderWidth = 0.5
+        cell.frame.size.width = screenWidth / 3
+        cell.frame.size.height = screenWidth / 3
+    
+        return cell
+    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+     
+        return CGSize(width: screenWidth/3, height: screenWidth/3);
+        
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.title="item : \(indexPath.item+1)"
+        pushToViewController("landingView")
+    }
+    
+    func pushToViewController(identifier: String) {
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! LandingView
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
+    
+    
+    func isUserRegistered() ->Bool{
+        
+        return Prefrences.getInstance.isUserRegistered()
+        
+    }
+    
 }
