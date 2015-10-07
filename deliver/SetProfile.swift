@@ -35,14 +35,14 @@ class SetProfile: UIViewController , UIImagePickerControllerDelegate, UINavigati
     
     func onDoneClick (sender:UIButton) {
     Prefrences.getInstance.setUserRegistered(true)
-    switchToViewController("baseView")
+    switchToViewController("mainView")
     }
     
     func switchToViewController(identifier: String) {
         if let navController = self.navigationController {
             navController.popToRootViewControllerAnimated(true)
         }
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! BaseView
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! MainView
         self.navigationController?.setViewControllers([viewController], animated: true)
         
     }
