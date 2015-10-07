@@ -13,24 +13,24 @@ import UIKit
 class MainView: UIViewController
 {
 
-    var base1 : BaseView1?
-    var base2 : BaseView2?
 
     
     override func viewDidLoad() {
         if(isUserRegistered()){
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
-            base1 = storyboard.instantiateViewControllerWithIdentifier("baseView1") as! BaseView1;
-            base2 = storyboard.instantiateViewControllerWithIdentifier("baseView2") as! BaseView2;
-            
+        
+            pushToViewController("baseView1")
            
            
         }else{
             switchToViewController("registerUser")
         }
     }
-
+    func pushToViewController(identifier: String) {
+        
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! BaseView1
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
     
     
     func switchToViewController(identifier: String) {
