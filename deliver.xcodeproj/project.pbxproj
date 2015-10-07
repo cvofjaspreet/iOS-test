@@ -215,7 +215,6 @@
 		1B74EE4A1BAD9B330042A962 = {
 			isa = PBXGroup;
 			children = (
-				1BF60FB31BC589CD001D9849 /* Headers */,
 				1BEF42541BBEE9BE00A5DC6C /* xmppFramework */,
 				1B74EE551BAD9B330042A962 /* deliver */,
 				1B74EE6E1BAD9B330042A962 /* deliverTests */,
@@ -236,6 +235,7 @@
 		1B74EE551BAD9B330042A962 /* deliver */ = {
 			isa = PBXGroup;
 			children = (
+				1BF60FB31BC589CD001D9849 /* Headers */,
 				1B143EDF1BC03A6200BFA364 /* Cells */,
 				1BD7C9211BB6820800E40BF8 /* View Controllers */,
 				1B74EE7D1BADA2350042A962 /* Database */,
@@ -363,7 +363,7 @@
 				1BF60FE41BC589CD001D9849 /* GoogleMaps.h */,
 			);
 			name = Headers;
-			path = GoogleMaps.framework/Versions/A/Headers;
+			path = ../GoogleMaps.framework/Versions/A/Headers;
 			sourceTree = "<group>";
 		};
 		EC17EBFF197645B9AF49CA50 /* Frameworks */ = {
