@@ -13,12 +13,24 @@ import UIKit
 class MainView: UIViewController
 {
 
+    @IBOutlet weak var scrollView: UIScrollView!
 
     
     override func viewDidLoad() {
         if(isUserRegistered()){
-        
-            pushToViewController("baseView1")
+            let width=self.view.frame.width
+            let height=self.view.frame.height
+            let base1 = storyboard!.instantiateViewControllerWithIdentifier("baseView1") as! BaseView1;
+            let base2 = storyboard!.instantiateViewControllerWithIdentifier("baseView2") as! BaseView2;
+            scrollView.pagingEnabled=true
+            scrollView.contentSize = CGSizeMake(width*2, height)
+            scrollView.contentOffset=CGPointMake(0, 0) 
+            addChildViewController(base1)
+     
+            
+            scrollView!.addSubview(base1.view)
+           
+            base1.didMoveToParentViewController(self)
            
            
         }else{
@@ -31,6 +43,12 @@ class MainView: UIViewController
         self.navigationController?.pushViewController(viewController, animated: true)
         
     }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        NSLog("Scrollview content offset %f %f", scrollView.contentOffset.x, scrollView.contentOffset.y)
+        NSLog("ScrollView: %@", scrollView)
+    }
+    
     
     
     func switchToViewController(identifier: String) {
@@ -49,6 +67,7 @@ class MainView: UIViewController
         
     }
     
+   
     
     
    }
