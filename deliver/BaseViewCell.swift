@@ -10,4 +10,8 @@ import Foundation
 import UIKit
 class BaseViewCell: UICollectionViewCell{
 
+    func setConstrant(width : CGFloat,height : CGFloat){
+   
+    }
+    
 }

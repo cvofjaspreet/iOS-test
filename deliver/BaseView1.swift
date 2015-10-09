@@ -31,7 +31,8 @@ class BaseView1: UICollectionViewController, UICollectionViewDelegateFlowLayout{
         layout.minimumLineSpacing = 0
         self.collectionView!.setCollectionViewLayout(layout, animated: false)
         self.collectionView!.backgroundColor = UIColor.greenColor()
-       
+        self.collectionView!.frame = CGRectMake (0,0,screenWidth/2,screenHeight)
+        self.collectionView?.reloadData()
     }
     
     
@@ -52,8 +53,8 @@ class BaseView1: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("baseViewCell1", forIndexPath: indexPath) as! BaseViewCell
         cell.backgroundColor = UIColor.whiteColor()
         cell.layer.borderColor = UIColor.blackColor().CGColor
-        cell.layer.borderWidth = 0.5
-        cell.frame.size.width = screenWidth / 3
+        cell.layer.borderWidth =  0.5
+        cell.frame.size.width = (screenWidth / 3)-0.8
         cell.frame.size.height = screenWidth / 3
     
         return cell
