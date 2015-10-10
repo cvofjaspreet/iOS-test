@@ -9,21 +9,21 @@
 import Foundation
 import UIKit
 
-class BaseView1: UICollectionViewController, UICollectionViewDelegateFlowLayout{
+class BaseView3: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     
     var screenWidth: CGFloat!
     var screenHeight: CGFloat!
     
-    var pageIndex : Int = 2
+    var pageIndex : Int = 1
     var titleText : String = ""
     
     override func viewDidLoad() {
         
         self.title="Select an Item"
         
-        screenWidth = self.view.frame.width
-        screenHeight = self.view.frame.height
-       
+        let bounds = UIScreen.mainScreen().bounds
+        screenWidth = bounds.size.width
+        screenHeight = bounds.size.height
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
@@ -31,28 +31,11 @@ class BaseView1: UICollectionViewController, UICollectionViewDelegateFlowLayout{
         layout.minimumLineSpacing = 0
         self.collectionView!.setCollectionViewLayout(layout, animated: false)
         self.collectionView!.backgroundColor = UIColor.greenColor()
-        self.collectionView!.frame = CGRectMake (0,0,screenWidth/2,screenHeight)
+        self.collectionView!.frame = CGRectMake (screenWidth,0,screenWidth/2,screenHeight)
         self.collectionView?.reloadData()
-        
-        loginXmpp()
- 
     }
     
-    func loginXmpp(){
-        let login="jasptreet" as String
-        NSUserDefaults.standardUserDefaults().setValue("jasptreet", forKey: "userID")
-        NSUserDefaults.standardUserDefaults().setValue("9319396142", forKey: "userPassword")
-        if( login.componentsSeparatedByString("@").count > 1 )
-        {
-            let loginServer = login.componentsSeparatedByString("@")[1]
-            print("server: \(loginServer)")
-            NSUserDefaults.standardUserDefaults().setValue(loginServer, forKey: "loginServer")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
-}
-
     
-
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 21
@@ -61,21 +44,21 @@ class BaseView1: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-
     
-   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("baseViewCell1", forIndexPath: indexPath) as! BaseViewCell
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("baaeViewCell3", forIndexPath: indexPath) as! BaseViewCell
         cell.backgroundColor = UIColor.whiteColor()
         cell.layer.borderColor = UIColor.blackColor().CGColor
-        cell.layer.borderWidth =  0.5
+        cell.layer.borderWidth = 0.5
         cell.frame.size.width = (screenWidth / 3)-0.8
         cell.frame.size.height = screenWidth / 3
-    
+        
         return cell
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-     
+        
         return CGSize(width: screenWidth/3, height: screenWidth/3);
         
     }
@@ -93,5 +76,4 @@ class BaseView1: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     }
     
     
-       
 }
